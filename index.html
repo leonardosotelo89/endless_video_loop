@@ -13,14 +13,14 @@
       }
       .plus { position: absolute; right: 0; top: 0; width: 50px; height: 50px; text-align: center; animation: activo 5.5s linear infinite alternate; }
       @keyframes activo { 50% { border-radius: 50%; } }
-      #dmtry { position: absolute; right: 0; top: 50px; font-size: 20px; }
+      
     </style>
   </head>
   <body>
     <h2>leonardosotelo89</h2>
     <div class="plus">+ +</div>
-    <p>muted is a required attribute in modern browsers</p>
-    <button id="dmtry">Download Video</button>
+    
+    
 
     <iframe id="main" width="560" height="315"
       src="https://www.youtube.com/embed/mmCnQDUSO4I"
@@ -52,21 +52,7 @@
       // Touch to change video
       h2.addEventListener('touchstart', changeVideo);
 
-      // Download function
-      const download = (path, filename) => {
-        const anchor = document.createElement('a');
-        anchor.href = path;
-        anchor.download = filename;
-        document.body.appendChild(anchor);
-        anchor.click();
-        document.body.removeChild(anchor);
-      };
-
-      // Example download
-      let boton = document.querySelector('#dmtry');
-      boton.addEventListener('click', () => {
-        download(sources[index].song, sources[index].name);
-      });
+      
 
       // Change background color of the plus symbol every 5.5 seconds
       let plus = document.querySelector('.plus');
