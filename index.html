@@ -56,12 +56,15 @@ h2{
 <button id="dmtry" >Download Video</button>
 
 
-<video id="main" width="400px" height="300px" 
+<video id="video" width="400px" height="300px" 
        controls autoplay muted>
   <source src="" 
           type="video/mp4"/>
 </video>
-
+<iframe id="main" width="560" height="315" 
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
   </body>
 <script>
 /*
@@ -106,11 +109,11 @@ let h2 = document.querySelector('h2')
 
 let sources = []
 sources[0] = {
-song:'https://m.youtube.com/watch?v=mmCnQDUSO4I&pp=ygUeZG1pdHJpIHNob3N0YWtvdmljaCB3YWx0eiBubyAy', 
+song:'https://m.youtube.com/embed/mmCnQDUSO4I&pp=ygUeZG1pdHJpIHNob3N0YWtvdmljaCB3YWx0eiBubyAy', 
 name:'dmtry shostakovich waltz n2.mp4'
 } 
 sources[1] = {
-song:'https://m.youtube.com/watch?v=mPmoojB54xI&pp=ygUaZnJpZW5kc2hpcHMgKG9yaWdpbmFsIG1peCk%3D', 
+song:'https://m.youtube.com/embed/mPmoojB54xI&pp=ygUaZnJpZW5kc2hpcHMgKG9yaWdpbmFsIG1peCk%3D', 
 name: 'Friendships (Original Mix).mp4'
 } 
 
