@@ -1,1 +1,152 @@
 
+<html>
+  <head>
+<meta name="viewport" 
+content="width=device-width,
+                  height=device-height, 
+                  initial-scale=1.0">
+    <title></title>
+    <style>
+*{margin:0px;padding:0px;}
+    body{background-color: rgb(0,0,0);
+               color: lime;
+} 
+h2{
+  animation:colores 7s 1s linear infinite;
+}
+@keyframes colores{
+  from{
+   filter: hue-rotate(0deg);
+  }to{
+    filter: hue-rotate(360deg);
+  }
+}
+.plus{
+  position: absolute ;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  text-align: center ;
+  animation:activo 5.5s 0s linear infinite alternate ;
+}
+@keyframes activo{
+  from{
+    
+  }50%{
+    border-radius: 50%;
+  }to{
+    
+  }
+}
+#dmtry{
+  position:absolute ;
+  right: 0px ;
+  top: 50px ;
+  font-size: 20px ;
+}
+    </style>
+  </head>
+  <body>
+   <h2>leonardosotelo89</h2>
+   <div class="plus">+ +</div>
+<p>muted is a required attribute in modern browsers</p>
+
+
+<button id="dmtry" >Download Video</button>
+
+
+<video id="main" width="400px" height="300px" 
+       controls autoplay muted>
+  <source src="" 
+          type="video/mp4"/>
+</video>
+
+  </body>
+<script>
+/*
+  function downloadVideo() {
+    var videoUrl = "videoplayback.mp4";
+    var link = document.createElement("a");
+    document.body.appendChild(link)
+    link.href = videoUrl;
+    link.download = "dmitry shostakovich waltz no2.mp4"
+    link.click();
+  }
+*/
+
+const download = (path, filename) => {
+         const anchor = document.createElement('a');
+         anchor.href = path;
+         anchor.download = filename;
+         document.body.appendChild(anchor);
+         anchor.click();
+         document.body.removeChild(anchor);
+     };
+     
+     // Example download
+     let boton = document.querySelector('#dmtry')
+     boton.addEventListener('click', ()=>{
+     download(sources[index].song, sources[index].name);
+     })
+ 
+
+function unmute(){
+  let videos = 
+  Array.from(document.querySelectorAll('video'))
+  console.log(videos) 
+  for(let video of videos){
+    video.muted = false
+  }
+}
+document.body.onclick = unmute
+
+let main = document.querySelector('#main')
+let h2 = document.querySelector('h2')
+
+let sources = []
+sources[0] = {
+song:'videoplayback.mp4', 
+name:'dmtry shostakovich waltz n2.mp4'
+} 
+sources[1] = {
+song:'Friendships (Original Mix).mp4', 
+name: 'Friendships (Original Mix).mp4'
+} 
+
+
+let index = 0
+function playing(){
+  main.src = sources[index].song
+  main.onload = function (){
+  main.play()
+  } 
+  
+  main.onended = function (){
+    index = index >= sources.length - 1? 0 : ++index
+  }
+  index.addEventListener('change', playing) 
+}
+
+h2.addEventListener('touchstart', ()=>{
+  playing()
+})
+
+/*
+document.body.addEventListener('click', function(){
+  document.body.style.backgroundColor = `rgb(
+  ${Math.floor(Math.random()*256)} , 
+  ${Math.floor(Math.random()*256)} ,
+  ${Math.floor(Math.random()*256)} ) `
+})
+*/
+let plus = document.querySelector('.plus')
+let colores = setInterval(()=>{
+  plus.style.backgroundColor = `rgb(
+  ${Math.floor(Math.random()*256)} , 
+  ${Math.floor(Math.random()*256)} ,
+  ${Math.floor(Math.random()*256)} ) `
+}, 5500 )
+</script>
+<footer>                        <!--              --></footer>
+</html> 
